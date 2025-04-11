@@ -1,0 +1,4 @@
+# client/public/robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
