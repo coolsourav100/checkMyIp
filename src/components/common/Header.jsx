@@ -12,6 +12,7 @@ const Header = () => {
           <Link to="/" className="text-2xl font-bold text-[#003a94] dark:text-blue-400 tracking-tighter font-headline">Check My IP</Link>
           <nav className="hidden md:flex items-center gap-6 font-['Space_Grotesk'] text-sm tracking-tight">
             <NavLink to="/tools" className={getNavClass}>Tools</NavLink>
+            <NavLink to="/speed-test" className={getNavClass}>Speed Test</NavLink>
             <NavLink to="/blog" className={getNavClass}>Blog</NavLink>
             <NavLink to="/history" className={getNavClass}>History</NavLink>
           </nav>
