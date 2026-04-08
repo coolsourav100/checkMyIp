@@ -1,5 +1,5 @@
 // client/src/App.js
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import AppLayout from './components/layout/AppLayout';
