@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-[#f2f4f6] dark:bg-slate-900 border-t border-[#c1c7d1]/15 full-width mt-auto">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full px-8 py-12 max-w-7xl mx-auto font-['Manrope'] text-sm">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 w-full px-4 sm:px-8 py-8 sm:py-12 max-w-7xl mx-auto font-['Manrope'] text-sm">
         <div className="col-span-2 md:col-span-1 space-y-4">
           <div className="text-xl font-bold text-[#003a94] dark:text-blue-400 font-headline mb-4">Check My IP</div>
           <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">
@@ -41,7 +41,7 @@ const Footer = () => {
           </nav>
         </div>
       </div>
-      <div className="w-full px-8 py-6 max-w-7xl mx-auto border-t border-[#c1c7d1]/10 text-center">
+      <div className="w-full px-4 sm:px-8 py-4 sm:py-6 max-w-7xl mx-auto border-t border-[#c1c7d1]/10 text-center">
         <p className="text-slate-500 dark:text-slate-400 text-xs font-['Manrope']">© 2026 Check My IP. Precision Network Utilities.</p>
       </div>
     </footer>

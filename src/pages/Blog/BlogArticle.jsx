@@ -5,14 +5,14 @@ const BlogArticle = () => {
   return (
     <>
       {/* Article Header Section */}
-      <header className="pt-12 pb-8 px-6 max-w-5xl mx-auto">
+      <header className="pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 max-w-5xl mx-auto">
         <div className="flex flex-col gap-4">
           <nav className="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-outline">
             <span>Network Security</span>
             <span className="material-symbols-outlined text-[10px]">chevron_right</span>
             <span className="text-secondary">Privacy Guide</span>
           </nav>
-          <h1 className="font-headline text-4xl md:text-6xl font-bold text-on-surface tracking-tight leading-tight">
+          <h1 className="font-headline text-2xl sm:text-4xl md:text-6xl font-bold text-on-surface tracking-tight leading-tight">
             How to Hide Your IP Address: A Complete 2024 Privacy Guide
           </h1>
           <div className="flex items-center gap-6 mt-4 border-b border-outline-variant/15 pb-8 flex-wrap">
@@ -40,7 +40,7 @@ const BlogArticle = () => {
       </header>
 
       {/* Main Content Grid */}
-      <main className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 pb-24">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 pb-16 sm:pb-24">
         {/* Left Article Content */}
         <article className="lg:col-span-8 flex flex-col gap-8">
           <div className="rounded-xl overflow-hidden aspect-[21/9]">
@@ -62,7 +62,7 @@ const BlogArticle = () => {
               </div>
             </div>
 
-            <h2 className="font-headline text-3xl font-bold text-on-surface pt-4">1. Use a Virtual Private Network (VPN)</h2>
+            <h2 className="font-headline text-2xl sm:text-3xl font-bold text-on-surface pt-4">1. Use a Virtual Private Network (VPN)</h2>
             <p>
               The most robust and popular method for hiding your IP address is a VPN. When you use a VPN, your internet traffic is encrypted and routed through a secure server in a location of your choice. To the rest of the web, your traffic appears to be coming from the VPN server’s IP, not your own.
             </p>
@@ -72,7 +72,7 @@ const BlogArticle = () => {
               <li><strong className="text-on-surface">Kill Switch Protection:</strong> Ensures no data leaks if the connection drops.</li>
             </ul>
 
-            <h2 className="font-headline text-3xl font-bold text-on-surface pt-4">2. The Tor Browser: Ultimate Anonymity</h2>
+            <h2 className="font-headline text-2xl sm:text-3xl font-bold text-on-surface pt-4">2. The Tor Browser: Ultimate Anonymity</h2>
             <p>
               For those who require the highest level of anonymity, the Tor (The Onion Router) network is the gold standard. Tor bounces your traffic through three different volunteer-run nodes around the world, peeling away layers of encryption at each stop.
             </p>
@@ -81,14 +81,14 @@ const BlogArticle = () => {
               <p className="italic text-on-surface m-0">"Anonymity is not a crime; it is a prerequisite for freedom in the digital age. By masking your IP, you are reclaiming ownership of your digital footprint."</p>
             </div>
 
-            <h2 className="font-headline text-3xl font-bold text-on-surface pt-4">3. Proxy Servers</h2>
+            <h2 className="font-headline text-2xl sm:text-3xl font-bold text-on-surface pt-4">3. Proxy Servers</h2>
             <p>
               A proxy server acts as an intermediary for your requests. Unlike a VPN, most proxies do not encrypt your traffic and only work for specific applications (like your web browser). They are faster than VPNs but provide significantly less security.
             </p>
           </div>
 
           {/* Author Bio Section */}
-          <div className="mt-12 p-8 bg-surface-container-low rounded-xl flex flex-col md:flex-row gap-6 items-center md:items-start">
+          <div className="mt-8 sm:mt-12 p-5 sm:p-8 bg-surface-container-low rounded-xl flex flex-col md:flex-row gap-6 items-center md:items-start">
             <img alt="Marcus Thorne profile avatar" className="w-20 h-20 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_LQ6X8vSzW-mHf-6IDsixPgk98CMcDkXJEvGWcKrmQGGdx8BRLmB2YC4b9Sp45p1dx2BrnHIqJSXY5YIh7FBDs95y9oXPDh8us8QKOULGOqd-AcUfOU9KDOmcygOkn7jCeHxzDSezaDpRfrevKgNpPThzZWrT1c3V-ul3_3MwCyPgO8o7dtYFulYbSeUnA-gWvzx_LYnQQXIlGLKtN-4K3eR2PIZqmm1CEXZdehKeUnIa96jDWKS-hlPREiMR55dm1gPO5u3JuiQ" />
             <div className="text-center md:text-left">
               <h4 className="font-headline text-xl font-bold mb-2">About Marcus Thorne</h4>
@@ -124,11 +124,11 @@ const BlogArticle = () => {
       </main>
 
       {/* Related Articles Section */}
-      <section className="bg-surface-container-low py-20 px-6">
+      <section className="bg-surface-container-low py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="font-headline text-4xl font-bold text-on-surface tracking-tight">Keep Reading</h2>
+              <h2 className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface tracking-tight">Keep Reading</h2>
               <p className="text-on-surface-variant mt-2">More guides to master your network privacy.</p>
             </div>
             <Link to="/blog" className="hidden md:flex items-center gap-2 text-primary font-bold font-label uppercase text-xs tracking-widest group">
@@ -136,7 +136,7 @@ const BlogArticle = () => {
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {/* Card 1 */}
             <Link to="#" className="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
               <div className="aspect-video overflow-hidden">

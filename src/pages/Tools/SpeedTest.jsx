@@ -227,7 +227,7 @@ const SpeedTest = () => {
   const quality = getQuality(downloadSpeed);
 
   return (
-    <div className="max-w-[1400px] mx-auto px-6 pt-8 pb-20">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-16 sm:pb-20">
       <div className="flex flex-col xl:flex-row gap-8 items-start">
         {/* Left Ad */}
         <aside className="hidden xl:block w-[300px] shrink-0 sticky top-28">
@@ -241,7 +241,7 @@ const SpeedTest = () => {
         <div className="flex-1 min-w-0 space-y-8">
           {/* Header */}
           <div>
-            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tight mb-2">
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-2">
               Network Speed Test
             </h1>
             <p className="text-on-surface-variant max-w-xl">
@@ -250,13 +250,13 @@ const SpeedTest = () => {
           </div>
 
           {/* Main Speed Test Card */}
-          <section className="bg-surface-container-lowest rounded-xl p-8 ambient-shadow relative overflow-hidden">
+          <section className="bg-surface-container-lowest rounded-xl p-4 sm:p-6 md:p-8 ambient-shadow relative overflow-hidden">
             {/* Subtle background glow */}
             <div className={`absolute inset-0 transition-all duration-1000 pointer-events-none ${status === STATUS.DOWNLOADING ? 'bg-primary/3' : status === STATUS.UPLOADING ? 'bg-secondary/3' : 'bg-transparent'}`} />
 
             <div className="flex flex-col items-center">
               {/* Gauge */}
-              <div className="relative">
+              <div className="relative scale-75 sm:scale-100 origin-center">
                 <SpeedGauge
                   speed={displaySpeed}
                   maxSpeed={500}
@@ -265,18 +265,18 @@ const SpeedTest = () => {
               </div>
 
               {/* Metrics Row */}
-              <div className="grid grid-cols-3 gap-6 w-full max-w-sm mt-4 mb-8">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 w-full max-w-sm mt-2 sm:mt-4 mb-6 sm:mb-8">
                 <div className="text-center">
                   <p className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">Ping</p>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="font-headline text-2xl font-bold text-on-surface">{ping ?? '—'}</span>
+                    <span className="font-headline text-lg sm:text-2xl font-bold text-on-surface">{ping ?? '—'}</span>
                     {ping && <span className="font-label text-xs text-slate-400">ms</span>}
                   </div>
                 </div>
                 <div className="text-center border-x border-outline-variant/20">
                   <p className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">Download</p>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className={`font-headline text-2xl font-bold ${downloadSpeed ? 'text-primary' : 'text-on-surface'}`}>
+                    <span className={`font-headline text-lg sm:text-2xl font-bold ${downloadSpeed ? 'text-primary' : 'text-on-surface'}`}>
                       {downloadSpeed ? formatSpeed(downloadSpeed) : '—'}
                     </span>
                     {downloadSpeed && <span className="font-label text-xs text-slate-400">Mbps</span>}
@@ -285,7 +285,7 @@ const SpeedTest = () => {
                 <div className="text-center">
                   <p className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">Upload</p>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className={`font-headline text-2xl font-bold ${uploadSpeed ? 'text-secondary' : 'text-on-surface'}`}>
+                    <span className={`font-headline text-lg sm:text-2xl font-bold ${uploadSpeed ? 'text-secondary' : 'text-on-surface'}`}>
                       {uploadSpeed ? formatSpeed(uploadSpeed) : '—'}
                     </span>
                     {uploadSpeed && <span className="font-label text-xs text-slate-400">Mbps</span>}
@@ -321,7 +321,7 @@ const SpeedTest = () => {
               <button
                 onClick={runTest}
                 disabled={isRunning}
-                className={`w-36 h-36 rounded-full font-headline text-4xl font-bold tracking-tighter ambient-shadow transition-all active:scale-95
+                className={`w-28 h-28 sm:w-36 sm:h-36 rounded-full font-headline text-3xl sm:text-4xl font-bold tracking-tighter ambient-shadow transition-all active:scale-95
                   ${isRunning
                     ? 'bg-surface-container-high text-outline cursor-not-allowed'
                     : 'bg-gradient-to-br from-primary to-[#0050c4] text-white hover:scale-105 hover:shadow-primary/30 hover:shadow-lg'
@@ -337,9 +337,9 @@ const SpeedTest = () => {
 
           {/* Result Details Card — shown after completion */}
           {status === STATUS.DONE && (
-            <section className="bg-surface-container-lowest rounded-xl p-8 ambient-shadow">
+            <section className="bg-surface-container-lowest rounded-xl p-4 sm:p-6 md:p-8 ambient-shadow">
               <h2 className="font-headline text-xl font-bold text-primary mb-6">Detailed Results</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                 {[
                   { label: 'Ping', value: `${ping} ms`, icon: 'network_ping', color: 'text-primary' },
                   { label: 'Download', value: `${formatSpeed(downloadSpeed)} Mbps`, icon: 'download', color: 'text-primary' },
@@ -357,8 +357,8 @@ const SpeedTest = () => {
           )}
 
           {/* Educational Content */}
-          <section className="bg-surface-container-low rounded-xl p-8">
-            <h2 className="font-headline text-2xl font-bold text-on-surface mb-6">What affects your speed?</h2>
+          <section className="bg-surface-container-low rounded-xl p-5 sm:p-8">
+            <h2 className="font-headline text-xl sm:text-2xl font-bold text-on-surface mb-6">What affects your speed?</h2>
             <div className="space-y-5">
               {[
                 { n: '01', title: 'Hardware Bottlenecks', body: 'Older routers or network cards may not support modern gigabit speeds. Ensure your hardware is rated for your service plan.' },

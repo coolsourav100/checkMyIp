@@ -28,10 +28,10 @@ const History = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10 min-h-[calc(100vh-200px)] flex flex-col">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 min-h-[calc(100vh-200px)] flex flex-col">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
         <div className="space-y-4">
-          <h1 className="font-headline text-5xl md:text-6xl font-bold text-primary tracking-tight">Your Search History</h1>
+          <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tight">Your Search History</h1>
           <p className="text-on-surface-variant max-w-2xl text-lg relative pl-5 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-primary/20 before:rounded-full">
             All your network queries are securely saved directly in your browser's local storage. None of this data is sent to our servers.
           </p>

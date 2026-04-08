@@ -76,10 +76,10 @@ const DnsLookup = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8 md:py-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
       {/* Ad Placeholder Leaderboard - MAXIMIZED */}
       <div className="w-full flex justify-center mb-12">
-        <div className="w-full max-w-[970px] min-h-[250px] bg-surface-container flex items-center justify-center rounded-xl overflow-hidden relative group border border-outline-variant/10">
+        <div className="w-full max-w-[970px] min-h-[100px] sm:min-h-[250px] bg-surface-container flex items-center justify-center rounded-xl overflow-hidden relative group border border-outline-variant/10">
           <div className="text-outline text-xs font-label tracking-widest uppercase opacity-80 absolute top-4 left-6">Advertisement - Premium Partner</div>
           <div className="text-outline-variant font-medium text-lg">970x250 Premium Billboard Layout</div>
         </div>
@@ -89,7 +89,7 @@ const DnsLookup = () => {
         <div className="lg:col-span-8 space-y-8">
           {/* Hero Section */}
           <section className="space-y-4">
-            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
               Free Online DNS Lookup Tool
             </h1>
             <p className="text-on-surface-variant max-w-2xl text-lg leading-relaxed">
@@ -98,7 +98,7 @@ const DnsLookup = () => {
           </section>
           {/* Tool Interface */}
           <div className="surface-container-lowest p-1 rounded-xl">
-            <div className="bg-surface-container-low rounded-[calc(0.5rem+4px)] p-6 md:p-10 space-y-8">
+            <div className="bg-surface-container-low rounded-[calc(0.5rem+4px)] p-4 sm:p-6 md:p-10 space-y-6 sm:space-y-8">
               <form onSubmit={handleLookup} className="flex flex-col md:flex-row gap-4 items-end">
                 <div className="flex-1 w-full space-y-2">
                   <label className="font-label text-[11px] font-bold text-on-surface-variant uppercase tracking-widest ml-1">Domain Name</label>
@@ -156,9 +156,9 @@ const DnsLookup = () => {
             </div>
           </div>
           {/* How It Works Section */}
-          <article className="bg-surface-container-low rounded-xl p-8 md:p-12 space-y-8">
+          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
             <div className="max-w-2xl">
-              <h2 className="font-headline text-3xl font-bold text-primary mb-6">How DNS Lookup Works</h2>
+              <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mb-6">How DNS Lookup Works</h2>
               <div className="prose prose-slate max-w-none space-y-6 text-on-surface-variant leading-relaxed">
                 <p>
                   Domain Name System (DNS) is essentially the phonebook of the internet. When you type a URL like <code className="bg-surface-container px-2 py-1 rounded font-headline text-primary">checkmyip.com</code> into your browser, DNS translates that human-readable name into a machine-readable IP address.

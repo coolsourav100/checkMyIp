@@ -60,7 +60,7 @@ const Home = () => {
   const { asn, org } = getAsnAndOrg(ipData?.org);
 
   return (
-    <div className="max-w-[1400px] mx-auto px-6 pt-8 pb-20">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-16 sm:pb-20">
       <div className="flex flex-col xl:flex-row gap-8 items-start">
         {/* Left Sidebar Ad Area */}
         <aside className="hidden xl:block w-[300px] shrink-0 sticky top-28">
@@ -75,26 +75,26 @@ const Home = () => {
           {/* Hero IP Card */}
           <section className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[2rem] blur-2xl group-hover:opacity-100 transition duration-1000"></div>
-            <div className="relative bg-surface-container-lowest rounded-xl p-10 ambient-shadow overflow-hidden">
+            <div className="relative bg-surface-container-lowest rounded-xl p-5 sm:p-8 md:p-10 ambient-shadow overflow-hidden">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
                   <span className="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full font-label text-xs font-bold mb-6">
                     <span className={`w-2 h-2 rounded-full ${loading ? 'bg-outline animate-pulse' : 'bg-secondary animate-pulse'}`}></span>
                     {loading ? 'DETECTING CONNECTION...' : 'YOUR PUBLIC IP ADDRESS'}
                   </span>
-                  <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary tracking-tighter leading-none mb-4 min-h-[72px]">
+                  <h1 className="font-headline text-3xl sm:text-5xl md:text-7xl font-bold text-primary tracking-tighter leading-none mb-4 min-h-[40px] sm:min-h-[72px] break-all sm:break-normal">
                     {loading ? 'Retrieving...' : ipData?.ip || 'Unknown IP'}
                   </h1>
-                  <p className="text-on-surface-variant font-body text-lg max-w-md min-h-[56px]">
+                  <p className="text-on-surface-variant font-body text-sm sm:text-lg max-w-md min-h-[40px] sm:min-h-[56px]">
                     {loading ? 'Analyzing your connection route and geolocation data...' : `Your connection is routed through ${ipData?.city || 'Unknown'}, ${ipData?.region || 'Unknown'}.`}
                   </p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <button onClick={handleCopy} className="glass-overlay p-4 rounded-xl text-primary hover:bg-primary-fixed transition-colors ambient-shadow flex items-center gap-2 group/btn active:scale-95">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <button onClick={handleCopy} className="glass-overlay p-3 sm:p-4 rounded-xl text-primary hover:bg-primary-fixed transition-colors ambient-shadow flex items-center gap-2 group/btn active:scale-95">
                     <span className="material-symbols-outlined">{copied ? 'check' : 'content_copy'}</span>
-                    <span className="font-bold text-sm tracking-tight">{copied ? 'Copied!' : 'Copy Address'}</span>
+                    <span className="font-bold text-xs sm:text-sm tracking-tight">{copied ? 'Copied!' : 'Copy Address'}</span>
                   </button>
-                  <button onClick={fetchData} className="glass-overlay p-4 rounded-xl text-primary hover:bg-primary-fixed transition-colors ambient-shadow active:scale-95 group" title="Refresh">
+                  <button onClick={fetchData} className="glass-overlay p-3 sm:p-4 rounded-xl text-primary hover:bg-primary-fixed transition-colors ambient-shadow active:scale-95 group" title="Refresh">
                     <span className={`material-symbols-outlined ${loading ? 'animate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`}>refresh</span>
                   </button>
                 </div>
@@ -102,9 +102,9 @@ const Home = () => {
             </div>
           </section>
           {/* Data Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {/* Geolocation Card */}
-            <div className="bg-surface-container-lowest rounded-xl p-8 ambient-shadow flex flex-col h-full">
+            <div className="bg-surface-container-lowest rounded-xl p-5 sm:p-8 ambient-shadow flex flex-col h-full">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="font-headline text-2xl font-bold tracking-tight text-primary">Geolocation Data</h3>
                 <span className="material-symbols-outlined text-secondary">location_on</span>
@@ -144,7 +144,7 @@ const Home = () => {
               </div>
             </div>
             {/* Network & Security Card */}
-            <div className="bg-surface-container-lowest rounded-xl p-8 ambient-shadow flex flex-col h-full">
+            <div className="bg-surface-container-lowest rounded-xl p-5 sm:p-8 ambient-shadow flex flex-col h-full">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="font-headline text-2xl font-bold tracking-tight text-primary">Network Info</h3>
                 <span className="material-symbols-outlined text-secondary">router</span>
@@ -152,7 +152,7 @@ const Home = () => {
               <div className="space-y-6 flex-1">
                 <div className="flex justify-between items-start group">
                   <span className="font-label text-sm text-on-surface-variant font-medium mt-1">ISP</span>
-                  <span className="font-body text-on-surface font-bold text-right max-w-[180px] group-hover:text-primary transition-colors">{loading ? '...' : org}</span>
+                  <span className="font-body text-on-surface font-bold text-right max-w-[140px] sm:max-w-[180px] break-words group-hover:text-primary transition-colors">{loading ? '...' : org}</span>
                 </div>
                 <div className="flex justify-between items-center group">
                   <span className="font-label text-sm text-on-surface-variant font-medium">Organization</span>
@@ -187,7 +187,7 @@ const Home = () => {
             </div>
           </div>
           {/* Secondary Tools Bento */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <Link to="/tools" className="flex items-center gap-4 p-6 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all active:scale-95 text-left group">
               <div className="p-3 bg-white rounded-lg ambient-shadow">
                 <span className="material-symbols-outlined text-primary">apps</span>
@@ -209,7 +209,7 @@ const Home = () => {
           </div>
         </div>
         {/* Right Sidebar Ad Area */}
-        <aside className="w-full lg:w-[300px] shrink-0">
+        <aside className="w-full xl:w-[300px] shrink-0">
           <div className="sticky top-28 space-y-8">
             <div className="w-full min-h-[600px] bg-surface-container-low flex flex-col items-center justify-center rounded-xl relative overflow-hidden border border-outline-variant/10">
               <span className="font-label text-[10px] uppercase tracking-widest text-outline absolute top-2 left-4 z-10">Advertisement</span>

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const BlogIndex = () => {
   return (
-    <div className="flex-grow w-full max-w-7xl mx-auto px-6 py-10">
+    <div className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
       {/* Hero Header */}
       <section className="mb-12">
-        <h1 className="font-headline text-5xl md:text-6xl font-bold text-primary tracking-tight mb-4">Network Insights & Security Blog</h1>
+        <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tight mb-4">Network Insights & Security Blog</h1>
         <p className="text-on-surface-variant max-w-2xl text-lg">Deep dives into cybersecurity, network protocols, and the future of digital privacy. Engineered for precision.</p>
       </section>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -17,12 +17,12 @@ const BlogIndex = () => {
             <div className="aspect-[21/9] overflow-hidden">
               <img alt="abstract visualization" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUeiRuSPIBOnPJn2xRgBVyXLqJBTiE3l_f-_V55rPPKSE-aUlFVK4B5rbrmjwsya6csSfnHtAapaRIcweGt94C0Eh313ES3w0lc5R1R1n4vfB1yUHn3Bz32e2A-wwWkfK-5IcC8QwJpQrvCTq2bkwJ4I7_DDaOSSViCRCnNFLvUYbXgUimcU5x1Q5ZlkvUsmyA24ZwTtI776x1hB6CG0UjSlf-GR908JTzsRSb-uN0QaPGoeogS33D25us25ZqWviunRzOW0UFz44" />
             </div>
-            <div className="p-8 md:p-10">
+            <div className="p-5 sm:p-8 md:p-10">
               <div className="flex items-center gap-4 mb-4">
                 <span className="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full font-label tracking-wider uppercase">Featured Insight</span>
                 <span className="text-outline font-label text-xs">OCT 24, 2024</span>
               </div>
-              <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">Understanding IPv6: The Backbone of the Next-Generation Internet</h2>
+              <h2 className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">Understanding IPv6: The Backbone of the Next-Generation Internet</h2>
               <p className="text-on-surface-variant text-lg mb-6 leading-relaxed">As IPv4 addresses reach exhaustion, the transition to IPv6 becomes critical. We break down the technical architecture and security benefits of the 128-bit address space.</p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
