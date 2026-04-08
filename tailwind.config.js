@@ -1,8 +1,73 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "surface-variant": "#e0e3e5",
+        "surface-container": "#eceef0",
+        "surface-bright": "#f7f9fb",
+        "primary-fixed": "#dae2ff",
+        "outline": "#717781",
+        "primary-container": "#0050c4",
+        "on-tertiary-fixed-variant": "#703800",
+        "tertiary": "#663300",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed": "#2f1400",
+        "secondary-container": "#94edfc",
+        "inverse-surface": "#2d3133",
+        "primary": "#003a94",
+        "inverse-on-surface": "#eff1f3",
+        "tertiary-fixed": "#ffdcc4",
+        "on-surface": "#191c1e",
+        "error": "#ba1a1a",
+        "outline-variant": "#c1c7d1",
+        "surface-tint": "#0056d2",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#004f57",
+        "on-secondary-fixed": "#001f24",
+        "surface": "#f7f9fb",
+        "primary-fixed-dim": "#b2c5ff",
+        "on-surface-variant": "#414750",
+        "on-error-container": "#93000a",
+        "surface-dim": "#d8dadc",
+        "tertiary-container": "#894600",
+        "on-primary-fixed": "#001847",
+        "error-container": "#ffdad6",
+        "on-secondary": "#ffffff",
+        "surface-container-high": "#e6e8ea",
+        "inverse-primary": "#b2c5ff",
+        "on-secondary-container": "#006d79",
+        "on-primary-container": "#bdcdff",
+        "on-error": "#ffffff",
+        "secondary": "#006874",
+        "tertiary-fixed-dim": "#ffb781",
+        "background": "#f7f9fb",
+        "secondary-fixed-dim": "#7ad4e2",
+        "on-tertiary": "#ffffff",
+        "surface-container-low": "#f2f4f6",
+        "secondary-fixed": "#97f0ff",
+        "on-tertiary-container": "#ffc295",
+        "on-background": "#191c1e",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed-variant": "#0040a1"
+      },
+      borderRadius: {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      fontFamily: {
+        "headline": ["Space Grotesk", "sans-serif"],
+        "body": ["Manrope", "sans-serif"],
+        "label": ["Inter", "sans-serif"]
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries'),
+  ],
 };
