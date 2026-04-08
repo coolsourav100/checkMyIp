@@ -207,9 +207,9 @@ const SpeedTest = () => {
   }, []);
 
   const isRunning = [STATUS.PINGING, STATUS.DOWNLOADING, STATUS.UPLOADING].includes(status);
-  const gaugeSpeed = isRunning ? liveSpeed : status === STATUS.DONE
-    ? (status === STATUS.UPLOADING ? uploadSpeed : downloadSpeed)
-    : null;
+  // const gaugeSpeed = isRunning ? liveSpeed : status === STATUS.DONE
+  //   ? (status === STATUS.UPLOADING ? uploadSpeed : downloadSpeed)
+  //   : null;
 
   // Show final download speed when done
   const displaySpeed = status === STATUS.DONE

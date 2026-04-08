@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const ToolsIndex = () => {
   return (
-    <div className="flex-grow w-full max-w-7xl mx-auto px-6 py-8">
+    <div className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       {/* Header Section */}
       <section className="mb-12">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6">
           <div className="max-w-2xl">
-            <h1 className="font-headline text-5xl font-bold text-primary tracking-tight mb-4">Network Utility Hub</h1>
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-4">Network Utility Hub</h1>
             <p className="text-on-surface-variant text-lg leading-relaxed">Access our comprehensive suite of professional-grade network diagnostics and security auditing tools. Built for speed, precision, and privacy.</p>
           </div>
           <div className="w-full md:w-auto mt-6 md:mt-0">
             {/* Billboard Ad Placeholder */}
-            <div className="bg-surface-container-low w-full md:w-[728px] h-[90px] lg:w-[970px] lg:h-[250px] flex items-center justify-center rounded-xl border border-outline-variant/10 relative overflow-hidden">
+            <div className="bg-surface-container-low w-full md:w-[728px] h-[90px] lg:w-[970px] lg:h-[250px] flex items-center justify-center rounded-xl border border-outline-variant/10 relative overflow-hidden hidden sm:flex">
               <span className="text-[10px] uppercase tracking-widest text-outline font-label absolute top-2 left-4 lg:top-4 lg:left-6">Advertisement</span>
               <div className="text-outline-variant font-medium lg:text-lg">Premium Billboard Ad Slot</div>
             </div>
@@ -23,16 +23,16 @@ const ToolsIndex = () => {
 
       {/* Search Bar Hero */}
       <section className="mb-16">
-        <div className="relative bg-primary-container p-8 md:p-12 rounded-[2rem] overflow-hidden">
+        <div className="relative bg-primary-container p-5 sm:p-8 md:p-12 rounded-xl sm:rounded-[2rem] overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary-container rounded-full blur-3xl"></div>
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <h2 className="text-on-primary-container font-headline text-2xl md:text-3xl font-bold mb-8">What are you looking for today?</h2>
+            <h2 className="text-on-primary-container font-headline text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">What are you looking for today?</h2>
             <div className="relative flex items-center">
               <span className="material-symbols-outlined absolute left-6 text-on-primary-container/60 text-2xl">search</span>
-              <input className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 text-lg focus:ring-4 focus:ring-secondary/30 outline-none transition-all" placeholder="Find a tool (e.g., DNS, Proxy, Ping...)" type="text" />
+              <input className="w-full h-12 sm:h-16 pl-12 sm:pl-16 pr-4 sm:pr-8 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 text-base sm:text-lg focus:ring-4 focus:ring-secondary/30 outline-none transition-all" placeholder="Find a tool (e.g., DNS, Proxy, Ping...)" type="text" />
             </div>
           </div>
         </div>
