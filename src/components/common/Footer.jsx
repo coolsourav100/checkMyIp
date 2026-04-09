@@ -19,18 +19,19 @@ const Footer = () => {
         <div className="space-y-4">
           <div className="font-bold text-on-surface uppercase tracking-wider font-headline text-xs text-[#003a94] dark:text-blue-400">Core Tools</div>
           <nav className="flex flex-col gap-2">
+            <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">IP Lookup</Link>
             <Link to="/dns-lookup" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">DNS Lookup</Link>
-            <Link to="#" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Ping</Link>
-            <Link to="#" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Port Checker</Link>
-            <Link to="#" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Whois</Link>
+            <Link to="/ping-check" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Ping Test</Link>
+            <Link to="/speed-test" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Speed Test</Link>
           </nav>
         </div>
         <div className="space-y-4">
           <div className="font-bold text-on-surface uppercase tracking-wider font-headline text-xs text-[#003a94] dark:text-blue-400">Security</div>
           <nav className="flex flex-col gap-2">
-            <Link to="#" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Proxy Checker</Link>
-            <Link to="#" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">VPN Detection</Link>
-            <Link to="#" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Network Security</Link>
+            <Link to="/vpn-check" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">VPN & Proxy Detection</Link>
+            <Link to="/whois-lookup" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Whois Lookup</Link>
+            <Link to="/port-check" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Port Scanner</Link>
+            <Link to="/security-check" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Network Security</Link>
           </nav>
         </div>
         <div className="space-y-4">

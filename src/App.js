@@ -9,6 +9,10 @@ import ToolsIndex from './pages/Tools/ToolsIndex';
 import DnsLookup from './pages/Tools/DnsLookup';
 import VpnProxyCheck from './pages/Tools/VpnProxyCheck';
 import SpeedTest from './pages/Tools/SpeedTest';
+import PingCheck from './pages/Tools/PingCheck';
+import PortCheck from './pages/Tools/PortCheck';
+import WhoisLookup from './pages/Tools/WhoisLookup';
+import NetworkSecurity from './pages/Tools/NetworkSecurity';
 import BlogIndex from './pages/Blog/BlogIndex';
 import BlogArticle from './pages/Blog/BlogArticle';
 import History from './pages/History';
@@ -27,6 +31,10 @@ const App = () => {
             <Route path="/dns-lookup" element={<DnsLookup />} />
             <Route path="/vpn-check" element={<VpnProxyCheck />} />
             <Route path="/speed-test" element={<SpeedTest />} />
+            <Route path="/ping-check" element={<PingCheck />} />
+            <Route path="/port-check" element={<PortCheck />} />
+            <Route path="/whois-lookup" element={<WhoisLookup />} />
+            <Route path="/security-check" element={<NetworkSecurity />} />
             <Route path="/history" element={<History />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />

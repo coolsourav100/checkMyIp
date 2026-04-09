@@ -78,13 +78,53 @@ const ToolsIndex = () => {
                 Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </div>
             </Link>
+            {/* Ping Check */}
+            <Link to="/ping-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
+              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                <span className="material-symbols-outlined">radar</span>
+              </div>
+              <h3 className="font-headline text-xl font-bold mb-2">Ping Test</h3>
+              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Measure latency and reachability using HTTP requests to verify the responsiveness of websites.</p>
+              <div className="flex items-center text-primary font-bold text-sm">
+                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </Link>
 
-            {/* New Tool Suggestion */}
-            <div className="bg-surface-container-low p-6 rounded-xl border border-dashed border-outline-variant/50 flex flex-col items-center justify-center text-center">
-              <span className="material-symbols-outlined text-outline-variant mb-3">add_circle</span>
-              <h3 className="font-headline text-lg font-medium text-on-surface-variant">Suggest a tool</h3>
-              <p className="text-on-surface-variant text-xs mt-1">Need a specific utility? Let us know.</p>
-            </div>
+            {/* Port Scanner */}
+            <Link to="/port-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
+              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                <span className="material-symbols-outlined">troubleshoot</span>
+              </div>
+              <h3 className="font-headline text-xl font-bold mb-2">Port Scanner</h3>
+              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Determine the status of common network ports to identify active services and verify security.</p>
+              <div className="flex items-center text-primary font-bold text-sm">
+                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </Link>
+
+            {/* Whois Lookup */}
+            <Link to="/whois-lookup" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
+              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                <span className="material-symbols-outlined">person_search</span>
+              </div>
+              <h3 className="font-headline text-xl font-bold mb-2">Whois Lookup</h3>
+              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Analyze domain registry records, ownership data, and expiration dates using modern RDAP queries.</p>
+              <div className="flex items-center text-primary font-bold text-sm">
+                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </Link>
+
+            {/* Network Security */}
+            <Link to="/security-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
+              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                <span className="material-symbols-outlined">gpp_good</span>
+              </div>
+              <h3 className="font-headline text-xl font-bold mb-2">Network Security</h3>
+              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Audit domains for essential HTTP security headers and valid Transport Layer Security configurations.</p>
+              <div className="flex items-center text-primary font-bold text-sm">
+                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </Link>
           </div>
         </div>
 
