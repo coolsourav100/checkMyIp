@@ -17,8 +17,8 @@ const PingCheck = () => {
     if (cleanHost.startsWith('https://')) cleanHost = cleanHost.substring(8);
     if (cleanHost.split('/').length > 1) cleanHost = cleanHost.split('/')[0];
 
-    setLoading(true);
-    setError('');
+    // setLoading(true);
+    // setError('');
     setResults([]);
     setActiveWait(true);
 
@@ -60,7 +60,7 @@ const PingCheck = () => {
     }
 
     setActiveWait(false);
-    setLoading(false);
+    // setLoading(false);
 
     // Save to history
     saveToHistory('Ping Test', cleanHost, `Completed 4 pings`);
