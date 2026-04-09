@@ -35,7 +35,7 @@ const PortCheck = () => {
         // A closed port usually resolves instantly with Failed to fetch.
         // An open web port returns cross-origin error but finishes.
         // An open non-web port or filtered port hangs until timeout.
-        const start = performance.now();
+        // const start = performance.now();
         await fetch(`http://${cleanHost}:${port}`, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
         clearTimeout(timeoutId);
 

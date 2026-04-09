@@ -3,9 +3,9 @@ import { saveToHistory } from '../../utils/history';
 
 const PingCheck = () => {
   const [host, setHost] = useState('');
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [results, setResults] = useState(null);
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const [activeWait, setActiveWait] = useState(false);
 
   const handlePing = async (e) => {

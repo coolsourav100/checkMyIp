@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { saveToHistory } from '../../utils/history';
 
@@ -12,7 +12,7 @@ const WhoisLookup = () => {
   const handleLookup = async (e) => {
     e.preventDefault();
     if (!domain) return;
-    
+
     let cleanDomain = domain.trim().toLowerCase();
     if (cleanDomain.startsWith('http://')) cleanDomain = cleanDomain.substring(7);
     if (cleanDomain.startsWith('https://')) cleanDomain = cleanDomain.substring(8);
@@ -39,20 +39,20 @@ const WhoisLookup = () => {
   };
 
   const getEventDate = (action) => {
-      if (!results || !results.events) return 'N/A';
-      const event = results.events.find(e => e.eventAction === action);
-      if (!event) return 'N/A';
-      return new Date(event.eventDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    if (!results || !results.events) return 'N/A';
+    const event = results.events.find(e => e.eventAction === action);
+    if (!event) return 'N/A';
+    return new Date(event.eventDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
   };
 
   const getRegistrar = () => {
-      if (!results || !results.entities) return 'Unknown';
-      const reg = results.entities.find(e => e.roles && e.roles.includes('registrar'));
-      if (reg && reg.vcardArray && reg.vcardArray[1]) {
-          const nameCard = reg.vcardArray[1].find(c => c[0] === 'fn');
-          if (nameCard) return nameCard[3];
-      }
-      return 'Unknown';
+    if (!results || !results.entities) return 'Unknown';
+    const reg = results.entities.find(e => e.roles && e.roles.includes('registrar'));
+    if (reg && reg.vcardArray && reg.vcardArray[1]) {
+      const nameCard = reg.vcardArray[1].find(c => c[0] === 'fn');
+      if (nameCard) return nameCard[3];
+    }
+    return 'Unknown';
   };
 
   return (
@@ -75,12 +75,12 @@ const WhoisLookup = () => {
                   <label className="font-label text-[11px] font-bold text-on-surface-variant uppercase tracking-widest ml-1">Domain Name</label>
                   <div className="relative group">
                     <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person_search</span>
-                    <input 
+                    <input
                       value={domain}
                       onChange={(e) => setDomain(e.target.value)}
-                      className="w-full bg-surface-container-lowest border-2 border-transparent focus:border-primary rounded-xl py-4 pl-12 pr-4 font-headline text-lg transition-all outline-none" 
-                      placeholder="e.g. google.com" 
-                      type="text" 
+                      className="w-full bg-surface-container-lowest border-2 border-transparent focus:border-primary rounded-xl py-4 pl-12 pr-4 font-headline text-lg transition-all outline-none"
+                      placeholder="e.g. google.com"
+                      type="text"
                       required
                     />
                   </div>
@@ -90,7 +90,7 @@ const WhoisLookup = () => {
                   <span className={`material-symbols-outlined ${loading ? 'animate-spin' : ''}`}>search</span>
                 </button>
               </form>
-              
+
               {error && (
                 <div className="bg-error-container text-on-error-container p-4 rounded-lg font-medium text-sm flex items-center gap-3">
                   <span className="material-symbols-outlined">error</span>
@@ -103,7 +103,7 @@ const WhoisLookup = () => {
                   <div className="flex items-center justify-between border-b border-outline-variant/15 pb-4">
                     <h2 className="font-headline text-xl font-bold text-primary">Registration Data</h2>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
                       <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Domain Name</div>
@@ -116,53 +116,53 @@ const WhoisLookup = () => {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      <div className="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
-                          <span className="material-symbols-outlined text-outline mb-2">event</span>
-                          <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Registration Date</div>
-                          <div className="font-headline font-bold">{getEventDate('registration')}</div>
-                      </div>
-                      <div className="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm border-l-4 border-l-secondary">
-                          <span className="material-symbols-outlined text-secondary mb-2">event_available</span>
-                          <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Expiration Date</div>
-                          <div className="font-headline font-bold text-secondary">{getEventDate('expiration')}</div>
-                      </div>
-                      <div className="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
-                          <span className="material-symbols-outlined text-outline mb-2">update</span>
-                          <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Last Updated</div>
-                          <div className="font-headline font-bold">{getEventDate('last changed')}</div>
-                      </div>
+                    <div className="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
+                      <span className="material-symbols-outlined text-outline mb-2">event</span>
+                      <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Registration Date</div>
+                      <div className="font-headline font-bold">{getEventDate('registration')}</div>
+                    </div>
+                    <div className="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm border-l-4 border-l-secondary">
+                      <span className="material-symbols-outlined text-secondary mb-2">event_available</span>
+                      <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Expiration Date</div>
+                      <div className="font-headline font-bold text-secondary">{getEventDate('expiration')}</div>
+                    </div>
+                    <div className="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
+                      <span className="material-symbols-outlined text-outline mb-2">update</span>
+                      <div className="text-[10px] uppercase tracking-widest font-label text-outline mb-1">Last Updated</div>
+                      <div className="font-headline font-bold">{getEventDate('last changed')}</div>
+                    </div>
                   </div>
 
                   {results.nameservers && results.nameservers.length > 0 && (
-                      <div className="mt-8">
-                          <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
-                              <span className="material-symbols-outlined text-primary">dns</span>
-                              Nameservers
-                          </h3>
-                          <div className="bg-surface-container-lowest border border-outline-variant/10 rounded-xl overflow-hidden shadow-sm">
-                              {results.nameservers.map((ns, idx) => (
-                                  <div key={idx} className="p-4 border-b border-outline-variant/10 last:border-0 font-headline">
-                                      {ns.ldhName}
-                                  </div>
-                              ))}
+                    <div className="mt-8">
+                      <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+                        <span className="material-symbols-outlined text-primary">dns</span>
+                        Nameservers
+                      </h3>
+                      <div className="bg-surface-container-lowest border border-outline-variant/10 rounded-xl overflow-hidden shadow-sm">
+                        {results.nameservers.map((ns, idx) => (
+                          <div key={idx} className="p-4 border-b border-outline-variant/10 last:border-0 font-headline">
+                            {ns.ldhName}
                           </div>
+                        ))}
                       </div>
+                    </div>
                   )}
 
                   {results.status && results.status.length > 0 && (
-                      <div className="mt-8">
-                          <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
-                              <span className="material-symbols-outlined text-primary">info</span>
-                              Domain Status
-                          </h3>
-                          <div className="flex flex-wrap gap-2">
-                              {results.status.map((stat, idx) => (
-                                  <span key={idx} className="bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
-                                      {stat.replace(/_/g, ' ')}
-                                  </span>
-                              ))}
-                          </div>
+                    <div className="mt-8">
+                      <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+                        <span className="material-symbols-outlined text-primary">info</span>
+                        Domain Status
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {results.status.map((stat, idx) => (
+                          <span key={idx} className="bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
+                            {stat.replace(/_/g, ' ')}
+                          </span>
+                        ))}
                       </div>
+                    </div>
                   )}
 
                 </div>
