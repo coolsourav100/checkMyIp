@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ToolsIndex = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const tools = [
+    { title: 'IP Lookup', desc: 'Retrieve detailed geographical and technical information for any IPv4 or IPv6 address.', icon: 'my_location', link: '/' },
+    { title: 'DNS Lookup', desc: 'Query all DNS record types including A, MX, TXT, and CNAME for any domain globally.', icon: 'dns', link: '/dns-lookup' },
+    { title: 'VPN & Proxy Checker', desc: 'Advanced algorithm to detect if an IP is associated with a datacenter, known VPN, or hosting provider.', icon: 'vpn_lock', link: '/vpn-check' },
+    { title: 'Ping Test', desc: 'Measure latency and reachability using HTTP requests to verify the responsiveness of websites.', icon: 'radar', link: '/ping-check' },
+    { title: 'Port Scanner', desc: 'Determine the status of common network ports to identify active services and verify security.', icon: 'troubleshoot', link: '/port-check' },
+    { title: 'Whois Lookup', desc: 'Analyze domain registry records, ownership data, and expiration dates using modern RDAP queries.', icon: 'person_search', link: '/whois-lookup' },
+    { title: 'Network Security', desc: 'Audit domains for essential HTTP security headers and valid Transport Layer Security configurations.', icon: 'gpp_good', link: '/security-check' }
+  ];
+
+  const filteredTools = tools.filter(tool => 
+    tool.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    tool.desc.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <div className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       {/* Header Section */}
@@ -32,7 +48,13 @@ const ToolsIndex = () => {
             <h2 className="text-on-primary-container font-headline text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">What are you looking for today?</h2>
             <div className="relative flex items-center">
               <span className="material-symbols-outlined absolute left-6 text-on-primary-container/60 text-2xl">search</span>
-              <input className="w-full h-12 sm:h-16 pl-12 sm:pl-16 pr-4 sm:pr-8 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 text-base sm:text-lg focus:ring-4 focus:ring-secondary/30 outline-none transition-all" placeholder="Find a tool (e.g., DNS, Proxy, Ping...)" type="text" />
+              <input 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full h-12 sm:h-16 pl-12 sm:pl-16 pr-4 sm:pr-8 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 text-base sm:text-lg focus:ring-4 focus:ring-secondary/30 outline-none transition-all" 
+                placeholder="Find a tool (e.g., DNS, Proxy, Ping...)" 
+                type="text" 
+              />
             </div>
           </div>
         </div>
@@ -43,88 +65,28 @@ const ToolsIndex = () => {
         {/* Tools Grid (8/12 columns) */}
         <div className="lg:col-span-9">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {/* IP Lookup */}
-            <Link to="/" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">my_location</span>
-              </div>
-              <h3 className="font-headline text-xl font-bold mb-2">IP Lookup</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Retrieve detailed geographical and technical information for any IPv4 or IPv6 address.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
+            {filteredTools.map((tool, index) => (
+              <Link key={index} to={tool.link} className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
+                <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <span className="material-symbols-outlined">{tool.icon}</span>
+                </div>
+                <h3 className="font-headline text-xl font-bold mb-2">{tool.title}</h3>
+                <p className="text-on-surface-variant text-sm mb-6 flex-grow">{tool.desc}</p>
+                <div className="flex items-center text-primary font-bold text-sm">
+                  Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </Link>
+            ))}
 
-            {/* DNS Lookup */}
-            <Link to="/dns-lookup" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">dns</span>
+            {filteredTools.length === 0 && (
+              <div className="col-span-full py-12 text-center">
+                <div className="w-16 h-16 bg-surface-variant/20 rounded-full flex items-center justify-center mx-auto mb-4 text-outline">
+                  <span className="material-symbols-outlined text-3xl">search_off</span>
+                </div>
+                <h3 className="font-headline text-xl font-bold text-on-surface mb-2">No tools found</h3>
+                <p className="text-on-surface-variant text-sm">We couldn't find any tools matching "{searchQuery}". Try a different term.</p>
               </div>
-              <h3 className="font-headline text-xl font-bold mb-2">DNS Lookup</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Query all DNS record types including A, MX, TXT, and CNAME for any domain globally.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
-
-            {/* VPN/Proxy Detection */}
-            <Link to="/vpn-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">vpn_lock</span>
-              </div>
-              <h3 className="font-headline text-xl font-bold mb-2">VPN & Proxy Checker</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Advanced algorithm to detect if an IP is associated with a datacenter, known VPN, or hosting provider.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
-            {/* Ping Check */}
-            <Link to="/ping-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">radar</span>
-              </div>
-              <h3 className="font-headline text-xl font-bold mb-2">Ping Test</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Measure latency and reachability using HTTP requests to verify the responsiveness of websites.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
-
-            {/* Port Scanner */}
-            <Link to="/port-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">troubleshoot</span>
-              </div>
-              <h3 className="font-headline text-xl font-bold mb-2">Port Scanner</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Determine the status of common network ports to identify active services and verify security.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
-
-            {/* Whois Lookup */}
-            <Link to="/whois-lookup" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">person_search</span>
-              </div>
-              <h3 className="font-headline text-xl font-bold mb-2">Whois Lookup</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Analyze domain registry records, ownership data, and expiration dates using modern RDAP queries.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
-
-            {/* Network Security */}
-            <Link to="/security-check" className="group bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] flex flex-col h-full">
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">gpp_good</span>
-              </div>
-              <h3 className="font-headline text-xl font-bold mb-2">Network Security</h3>
-              <p className="text-on-surface-variant text-sm mb-6 flex-grow">Audit domains for essential HTTP security headers and valid Transport Layer Security configurations.</p>
-              <div className="flex items-center text-primary font-bold text-sm">
-                Launch Tool <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </Link>
+            )}
           </div>
         </div>
 
