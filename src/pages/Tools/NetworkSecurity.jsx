@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
 
 const NetworkSecurity = () => {
@@ -48,6 +49,12 @@ const NetworkSecurity = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Network Security Audit | Check HTTP Headers & TLS</title>
+        <meta name="description" content="Generate an instant security audit for any domain. Check HTTP security headers (HSTS, CSP) and TLS configurations to ensure maximum site security." />
+        <link rel="canonical" href="https://www.checkmyip.in/security-check" />
+      </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-8 space-y-8">
@@ -179,6 +186,7 @@ const NetworkSecurity = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

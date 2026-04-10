@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../utils/history';
 import AdUnit from '../components/ads/AdUnit';
 
@@ -118,7 +119,18 @@ const Home = () => {
   const { asn, org } = getAsnAndOrg(ipData?.org);
 
   return (
+    <>
+      <Helmet>
+        <title>What Is My IP Address? | Check My IP & Location Details</title>
+        <meta name="description" content="Check your public IPv4 and IPv6 address instantly. Our fast, secure IP lookup tool reveals your precise geolocation, ISP, and network data with no logging." />
+        <meta name="keywords" content="what is my ip, check my ip, ip lookup, my ip address, ipv4, ipv6, ip location" />
+        <link rel="canonical" href="https://www.checkmyip.in/" />
+      </Helmet>
+
     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-16 sm:pb-20">
+      {/* Hidden SEO H1 */}
+      <h1 className="sr-only">What is my IP Address?</h1>
+
       <div className="flex flex-col xl:flex-row gap-8 items-start">
         {/* Left Sidebar Ad Area */}
         <aside className="hidden xl:block w-[300px] shrink-0 sticky top-28">
@@ -151,9 +163,9 @@ const Home = () => {
                           </button>
                         )}
                       </div>
-                      <h1 className="font-headline text-3xl sm:text-4xl md:text-6xl font-bold text-primary tracking-tighter leading-none min-h-[40px] sm:min-h-[60px] break-all sm:break-normal">
+                      <div className="font-headline text-3xl sm:text-4xl md:text-6xl font-bold text-primary tracking-tighter leading-none min-h-[40px] sm:min-h-[60px] break-all sm:break-normal">
                         {loading ? 'Retrieving...' : ipv4 || 'None'}
-                      </h1>
+                      </div>
                     </div>
 
                     {/* Fixed logic to show "Retrieving..." state properly */}
@@ -167,9 +179,9 @@ const Home = () => {
                             </button>
                           )}
                         </div>
-                        <h2 className="font-headline text-2xl sm:text-3xl md:text-3xl font-bold text-secondary tracking-tighter leading-none min-h-[32px] sm:min-h-[48px] break-all sm:break-normal">
+                        <div className="font-headline text-2xl sm:text-3xl md:text-3xl font-bold text-secondary tracking-tighter leading-none min-h-[32px] sm:min-h-[48px] break-all sm:break-normal">
                           {loading ? 'Retrieving...' : ipv6}
-                        </h2>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -398,6 +410,7 @@ const Home = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

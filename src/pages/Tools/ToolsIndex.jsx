@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const ToolsIndex = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,6 +20,12 @@ const ToolsIndex = () => {
     tool.desc.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
+    <>
+      <Helmet>
+        <title>Network Diagnostic Tools | Ping, Port, DNS & Whois Lookup</title>
+        <meta name="description" content="Access our full suite of professional-grade network diagnostic tools. Run speed tests, DNS queries, open port scans, VPN detection, and ping checks directly from your browser." />
+        <link rel="canonical" href="https://www.checkmyip.in/tools" />
+      </Helmet>
     <div className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       {/* Header Section */}
       <section className="mb-12">
@@ -131,6 +138,7 @@ const ToolsIndex = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

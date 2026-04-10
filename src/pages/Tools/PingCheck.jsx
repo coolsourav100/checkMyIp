@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
 
 const PingCheck = () => {
@@ -86,6 +87,12 @@ const PingCheck = () => {
   const stats = calculateStats();
 
   return (
+    <>
+      <Helmet>
+        <title>Ping Test Tool | Measure Website Latency & Reachability</title>
+        <meta name="description" content="Use our free HTTP Ping tool to test server reachability, measure network latency (TTFB), and detect packet loss to any website or IP address." />
+        <link rel="canonical" href="https://www.checkmyip.in/ping-check" />
+      </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-8 space-y-8">
@@ -208,6 +215,7 @@ const PingCheck = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

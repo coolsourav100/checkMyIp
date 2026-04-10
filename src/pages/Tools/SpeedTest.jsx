@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
 import AdUnit from '../../components/ads/AdUnit';
 
@@ -227,6 +228,12 @@ const SpeedTest = () => {
   const quality = getQuality(downloadSpeed);
 
   return (
+    <>
+      <Helmet>
+        <title>Internet Speed Test | Measure Download, Upload & Ping</title>
+        <meta name="description" content="Test your real-world internet connection speed, latency, upload and download metrics using our fast edge-server speed test tool." />
+        <link rel="canonical" href="https://www.checkmyip.in/speed-test" />
+      </Helmet>
     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-16 sm:pb-20">
       <div className="flex flex-col xl:flex-row gap-8 items-start">
         {/* Left Ad */}
@@ -405,6 +412,7 @@ const SpeedTest = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

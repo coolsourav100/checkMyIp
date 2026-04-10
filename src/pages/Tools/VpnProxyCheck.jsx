@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
 
 const VpnProxyCheck = () => {
@@ -33,6 +34,12 @@ const VpnProxyCheck = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>VPN & Proxy Detector | Check IP Reputation & Datacenters</title>
+        <meta name="description" content="Identify if an IP address belongs to a residential connection, datacenter, VPN, or proxy host. Protect your platform with advanced fraud and threat detection." />
+        <link rel="canonical" href="https://www.checkmyip.in/vpn-check" />
+      </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
       {/* Ad Placeholder Banner - MAXIMIZED */}
       <div className="w-full flex justify-center mb-12">
@@ -145,6 +152,7 @@ const VpnProxyCheck = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

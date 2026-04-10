@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
 
 const DnsLookup = () => {
@@ -76,6 +77,12 @@ const DnsLookup = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>DNS Lookup Tool | Find A, MX, TXT, and CNAME Records</title>
+        <meta name="description" content="Query global DNS servers instantly to find A, MX, CNAME, and TXT records for any domain or IP address with our free DNS lookup tool." />
+        <link rel="canonical" href="https://www.checkmyip.in/dns-lookup" />
+      </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
       {/* Ad Placeholder Leaderboard - MAXIMIZED */}
       <div className="w-full flex justify-center mb-12">
@@ -243,6 +250,7 @@ const DnsLookup = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 

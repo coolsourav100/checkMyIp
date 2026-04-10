@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
 
 const WhoisLookup = () => {
@@ -56,6 +57,12 @@ const WhoisLookup = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>WHOIS Domain Lookup | Find Registration Data</title>
+        <meta name="description" content="Retrieve domain registration records, registrar information, expiration dates, and nameservers using our fast RDAP and WHOIS lookup tool." />
+        <link rel="canonical" href="https://www.checkmyip.in/whois-lookup" />
+      </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-8 space-y-8">
@@ -178,6 +185,7 @@ const WhoisLookup = () => {
         </aside>
       </div>
     </div>
+    </>
   );
 };
 
