@@ -197,11 +197,36 @@ const PingCheck = () => {
             </div>
           </div>
 
-          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 space-y-4">
-            <h2 className="font-headline text-xl font-bold text-primary">How HTTP Ping Works</h2>
-            <p className="text-sm text-on-surface-variant leading-relaxed">
-              Traditional ICMP Network Pings operate at a lower level of the network stack, and are blocked by web browsers for security reasons. This tool performs <strong>HTTP Pings</strong>. It attempts to load a resource securely over the web, giving you an accurate measurement of real-world latency (TTFB - Time to First Byte) between your device and the destination web server.
-            </p>
+          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 space-y-6">
+            <h2 className="font-headline text-2xl font-bold text-primary">Understanding Network Latency & Ping</h2>
+            
+            <div className="space-y-4 text-sm text-on-surface-variant leading-relaxed">
+              <section>
+                <h3 className="font-headline text-lg font-semibold mb-2 text-on-surface">What is a Ping Test?</h3>
+                <p>
+                  A ping test is a fundamental network diagnostic tool used to check the reachability of a host (like a website or server) on an Internet Protocol (IP) network. It measures the round-trip time (RTT) for messages sent from the originating host to a destination computer that are echoed back to the source. The name comes from active sonar terminology, where a pulse of sound is sent out and listening for its echo indicates the presence and distance of an object.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-lg font-semibold mb-2 text-on-surface">How HTTP Ping Works</h3>
+                <p>
+                  Traditional ICMP (Internet Control Message Protocol) Network Pings operate at the network layer and are often blocked by modern web browsers for security reasons. This tool performs <strong>HTTP Pings</strong>. It attempts to load a resource securely over the web, giving you an accurate measurement of real-world latency (TTFB - Time to First Byte) between your device and the destination web server, exactly as a real user would experience it.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-lg font-semibold mb-2 text-on-surface">Why Does Ping Matter?</h3>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li><strong>Online Gaming:</strong> High ping results in "lag," where your actions are delayed. A ping under 50ms is usually ideal for competitive gaming.</li>
+                  <li><strong>Video Conferencing:</strong> High latency causes delays in audio and video, leading to people talking over each other.</li>
+                  <li><strong>Web Browsing:</strong> Even with high bandwidth, high latency means websites take longer to start loading.</li>
+                </ul>
+                <p className="mt-3">
+                  Consistent packet loss (where requests never make it back) indicates an unstable connection, routing issues, or an overwhelmed server.
+                </p>
+              </section>
+            </div>
           </article>
         </div>
 

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ipv6-understanding",
+    "title": "Understanding IPv6: The Backbone of the Next-Generation Internet",
+    "summary": "As IPv4 addresses reach exhaustion, the transition to IPv6 becomes critical. We break down the technical architecture and security benefits of the 128-bit address space.",
+    "category": "Featured Insight",
+    "date": "2024-10-24",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDUeiRuSPIBOnPJn2xRgBVyXLqJBTiE3l_f-_V55rPPKSE-aUlFVK4B5rbrmjwsya6csSfnHtAapaRIcweGt94C0Eh313ES3w0lc5R1R1n4vfB1yUHn3Bz32e2A-wwWkfK-5IcC8QwJpQrvCTq2bkwJ4I7_DDaOSSViCRCnNFLvUYbXgUimcU5x1Q5ZlkvUsmyA24ZwTtI776x1hB6CG0UjSlf-GR908JTzsRSb-uN0QaPGoeogS33D25us25ZqWviunRzOW0UFz44"
+  },
+  {
+    "id": "vpn-vs-proxy",
+    "title": "VPN vs. Proxy: Which is Truly Anonymous?",
+    "summary": "A technical comparison of data encryption methods and how they impact your network latency and privacy footprint.",
+    "category": "Security",
+    "date": "2024-10-15",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPb8anLWv9X6JIvU8l3pt-kQOXXkChRmCcWbBlvt4JU7NYmrzYu9wy4sqaNb7HjzYNNrYG64GEyQZ5WyRW9svPoJSyl9-x8m5W3lg5gkGwUTShSuyvVfw6jSbANiEBA7XwYPLbKQrR3LFzX67DGKPkRukYGNt_uipVUs5EnP1XyUoB1qgfxoaKl5dfFMsEzas25j7EXNZ0YlTBsg2OkWO-xSRo0Jp96JitPLzvcTZvXcB90KImJ9l8_XG_MCOSuB3dQ7J9Gm5p4W4"
+  }
+]

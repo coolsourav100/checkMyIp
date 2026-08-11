@@ -2,6 +2,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
+
 import AppLayout from './components/layout/AppLayout';
 
 import Home from './pages/Home';
@@ -20,9 +22,12 @@ import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
 import TermsOfService from './pages/Legal/TermsOfService';
 import ErrorBoundary from './components/common/ErrorBoundary';
 
+import About from './pages/Legal/About';
+
 const App = () => {
   return (
     <HelmetProvider>
+      <Analytics />
       <AppLayout>
         <ErrorBoundary>
           <Routes>
@@ -36,10 +41,11 @@ const App = () => {
             <Route path="/whois-lookup" element={<WhoisLookup />} />
             <Route path="/security-check" element={<NetworkSecurity />} />
             <Route path="/history" element={<History />} />
+            <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/blog" element={<BlogIndex />} />
-            <Route path="/blog/how-to-hide-your-ip-address" element={<BlogArticle />} />
+            <Route path="/blog/:id" element={<BlogArticle />} />
           </Routes>
         </ErrorBoundary>
       </AppLayout>
