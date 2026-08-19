@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import AdUnit from '../../components/ads/AdUnit';
 
 const ToolsIndex = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -34,13 +35,11 @@ const ToolsIndex = () => {
             <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-4">Network Utility Hub</h1>
             <p className="text-on-surface-variant text-lg leading-relaxed">Access our comprehensive suite of professional-grade network diagnostics and security auditing tools. Built for speed, precision, and privacy.</p>
           </div>
-          <div className="w-full md:w-auto mt-6 md:mt-0">
-            {/* Billboard Ad Placeholder */}
-            <div className="bg-surface-container-low w-full md:w-[728px] h-[90px] lg:w-[970px] lg:h-[250px] flex items-center justify-center rounded-xl border border-outline-variant/10 relative overflow-hidden hidden sm:flex">
-              <span className="text-[10px] uppercase tracking-widest text-outline font-label absolute top-2 left-4 lg:top-4 lg:left-6">Advertisement</span>
-              <div className="text-outline-variant font-medium lg:text-lg">Premium Billboard Ad Slot</div>
+            <div className="w-full md:w-auto mt-6 md:mt-0">
+              <div className="w-full md:w-[728px] lg:w-[970px] lg:h-[250px] rounded-xl overflow-hidden hidden sm:flex">
+                <AdUnit slot="auto" format="auto" className="w-full h-full" />
+              </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -100,12 +99,8 @@ const ToolsIndex = () => {
         {/* Sidebar (3/12 columns) */}
         <aside className="lg:col-span-3 space-y-8">
           {/* Sidebar Ad */}
-          <div className="bg-surface-container-low w-full aspect-[3/5] flex flex-col items-center justify-center rounded-xl border border-outline-variant/10 overflow-hidden relative">
-            <img alt="Sidebar Ad" className="absolute inset-0 w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLQEO45y-PnBHc1SX-J9fKMs6bKlZIW-2XywUImHT6ZEPaPafDZlW7kaKAfhLca-Rw7yNAZA9sZMBwN0xV9nW5bQ9UcTdtpVkzdwZ3EiW97iN5guKxlTvACgsMAE6qrVCuS8Jz7LLefwvDdytmCHb5sr_CZgiQckSBTwa7IyJo2x9NaZAX804tdCaVQ3q5RAYqLhkiEkBlu1Qo8b7QHLJO_W8wh5m6qDt8JWa1iqv_WQ3UEb9e9S1XSaDf-p4E5_U-xAd6LiXpwok" />
-            <span className="text-[10px] uppercase tracking-widest text-outline font-label mb-4 z-10">Advertisement</span>
-            <div className="w-[160px] h-[600px] bg-white shadow-sm flex items-center justify-center border border-outline-variant/20 z-10">
-              <span className="text-outline-variant text-[10px]">160 x 600</span>
-            </div>
+          <div className="w-full min-h-[400px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[400px]" />
           </div>
 
           {/* Trending Tools */}
@@ -116,20 +111,20 @@ const ToolsIndex = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="#" className="group flex items-center justify-between py-2 border-b border-outline-variant/10">
-                  <span className="text-sm font-medium group-hover:text-primary transition-colors">VPN Audit v2.0</span>
+                <Link to="/vpn-check" className="group flex items-center justify-between py-2 border-b border-outline-variant/10">
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">VPN Detection</span>
                   <span className="text-[10px] bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-label">HOT</span>
                 </Link>
               </li>
               <li>
-                <Link to="#" className="group flex items-center justify-between py-2 border-b border-outline-variant/10">
-                  <span className="text-sm font-medium group-hover:text-primary transition-colors">IPv6 Transition Checker</span>
+                <Link to="/blog/ipv6-understanding" className="group flex items-center justify-between py-2 border-b border-outline-variant/10">
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">IPv6 Transition Guide</span>
                   <span className="material-symbols-outlined text-xs text-outline-variant">chevron_right</span>
                 </Link>
               </li>
               <li>
-                <Link to="#" className="group flex items-center justify-between py-2">
-                  <span className="text-sm font-medium group-hover:text-primary transition-colors">Global Ping Grid</span>
+                <Link to="/ping-check" className="group flex items-center justify-between py-2">
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">Ping Test</span>
                   <span className="material-symbols-outlined text-xs text-outline-variant">chevron_right</span>
                 </Link>
               </li>

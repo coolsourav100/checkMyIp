@@ -42,6 +42,9 @@ const Footer = () => {
           <nav className="flex flex-col gap-2">
             <Link to="/about" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">About Us</Link>
             <Link to="/blog" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Blog</Link>
+            <Link to="/faq" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">FAQ</Link>
+            <Link to="/glossary" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Glossary</Link>
+            <Link to="/contact" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Contact</Link>
             <Link to="/privacy" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Privacy Policy</Link>
             <Link to="/terms" className="text-slate-500 dark:text-slate-400 hover:text-[#003a94] dark:hover:text-blue-300 underline underline-offset-4 transition-all duration-300 ease-in-out">Terms of Service</Link>
           </nav>

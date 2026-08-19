@@ -16,5 +16,50 @@
     "date": "2024-10-15",
     "author": "Marcus Chen",
     "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPb8anLWv9X6JIvU8l3pt-kQOXXkChRmCcWbBlvt4JU7NYmrzYu9wy4sqaNb7HjzYNNrYG64GEyQZ5WyRW9svPoJSyl9-x8m5W3lg5gkGwUTShSuyvVfw6jSbANiEBA7XwYPLbKQrR3LFzX67DGKPkRukYGNt_uipVUs5EnP1XyUoB1qgfxoaKl5dfFMsEzas25j7EXNZ0YlTBsg2OkWO-xSRo0Jp96JitPLzvcTZvXcB90KImJ9l8_XG_MCOSuB3dQ7J9Gm5p4W4"
+  },
+  {
+    "id": "dns-security-threats",
+    "title": "DNS Security: How DNS Hijacking, Poisoning, and Tunneling Threaten Your Privacy",
+    "summary": "DNS is one of the most critical — and most vulnerable — components of internet infrastructure. This guide explores the three most dangerous DNS attack vectors and how to defend against them.",
+    "category": "Security",
+    "date": "2025-11-15",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDUeiRuSPIBOnPJn2xRgBVyXLqJBTiE3l_f-_V55rPPKSE-aUlFVK4B5rbrmjwsya6csSfnHtAapaRIcweGt94C0Eh313ES3w0lc5R1R1n4vfB1yUHn3Bz32e2A-wwWkfK-5IcC8QwJpQrvCTq2bkwJ4I7_DDaOSSViCRCnNFLvUYbXgUimcU5x1Q5ZlkvUsmyA24ZwTtI776x1hB6CG0UjSlf-GR908JTzsRSb-uN0QaPGoeogS33D25us25ZqWviunRzOW0UFz44"
+  },
+  {
+    "id": "what-is-asn",
+    "title": "What is an ASN (Autonomous System Number)? A Complete Technical Guide",
+    "summary": "Autonomous System Numbers are the backbone of internet routing, yet most users have never heard of them. This guide explains what ASNs are, how they work with BGP, and why they matter for IP intelligence.",
+    "category": "Networking",
+    "date": "2025-12-01",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPb8anLWv9X6JIvU8l3pt-kQOXXkChRmCcWbBlvt4JU7NYmrzYu9wy4sqaNb7HjzYNNrYG64GEyQZ5WyRW9svPoJSyl9-x8m5W3lg5gkGwUTShSuyvVfw6jSbANiEBA7XwYPLbKQrR3LFzX67DGKPkRukYGNt_uipVUs5EnP1XyUoB1qgfxoaKl5dfFMsEzas25j7EXNZ0YlTBsg2OkWO-xSRo0Jp96JitPLzvcTZvXcB90KImJ9l8_XG_MCOSuB3dQ7J9Gm5p4W4"
+  },
+  {
+    "id": "ip-geolocation-accuracy",
+    "title": "How Accurate is IP Geolocation? Understanding the Technology Behind Location Detection",
+    "summary": "IP geolocation powers everything from content localization to fraud detection. But how accurate is it really? This deep-dive explores the technology, accuracy levels, and limitations of mapping IP addresses to physical locations.",
+    "category": "Featured Insight",
+    "date": "2026-01-10",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDUeiRuSPIBOnPJn2xRgBVyXLqJBTiE3l_f-_V55rPPKSE-aUlFVK4B5rbrmjwsya6csSfnHtAapaRIcweGt94C0Eh313ES3w0lc5R1R1n4vfB1yUHn3Bz32e2A-wwWkfK-5IcC8QwJpQrvCTq2bkwJ4I7_DDaOSSViCRCnNFLvUYbXgUimcU5x1Q5ZlkvUsmyA24ZwTtI776x1hB6CG0UjSlf-GR908JTzsRSb-uN0QaPGoeogS33D25us25ZqWviunRzOW0UFz44"
+  },
+  {
+    "id": "port-scanning-explained",
+    "title": "Port Scanning Explained: How It Works, Common Ports, and Security Implications",
+    "summary": "Port scanning is a fundamental technique in network security. Learn how port scanners work, the difference between open, closed, and filtered ports, and how to secure your server against port-based attacks.",
+    "category": "Security",
+    "date": "2026-02-20",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPb8anLWv9X6JIvU8l3pt-kQOXXkChRmCcWbBlvt4JU7NYmrzYu9wy4sqaNb7HjzYNNrYG64GEyQZ5WyRW9svPoJSyl9-x8m5W3lg5gkGwUTShSuyvVfw6jSbANiEBA7XwYPLbKQrR3LFzX67DGKPkRukYGNt_uipVUs5EnP1XyUoB1qgfxoaKl5dfFMsEzas25j7EXNZ0YlTBsg2OkWO-xSRo0Jp96JitPLzvcTZvXcB90KImJ9l8_XG_MCOSuB3dQ7J9Gm5p4W4"
+  },
+  {
+    "id": "internet-speed-factors",
+    "title": "Why Is My Internet Slow? 10 Technical Factors That Affect Your Connection Speed",
+    "summary": "Frustrated by slow internet? The problem might not be your ISP. This technical guide explains 10 factors that affect your connection speed and provides actionable steps to diagnose and fix each one.",
+    "category": "Performance",
+    "date": "2026-03-05",
+    "author": "Marcus Chen",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDUeiRuSPIBOnPJn2xRgBVyXLqJBTiE3l_f-_V55rPPKSE-aUlFVK4B5rbrmjwsya6csSfnHtAapaRIcweGt94C0Eh313ES3w0lc5R1R1n4vfB1yUHn3Bz32e2A-wwWkfK-5IcC8QwJpQrvCTq2bkwJ4I7_DDaOSSViCRCnNFLvUYbXgUimcU5x1Q5ZlkvUsmyA24ZwTtI776x1hB6CG0UjSlf-GR908JTzsRSb-uN0QaPGoeogS33D25us25ZqWviunRzOW0UFz44"
   }
 ]

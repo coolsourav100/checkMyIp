@@ -21,6 +21,9 @@ import History from './pages/History';
 import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
 import TermsOfService from './pages/Legal/TermsOfService';
 import ErrorBoundary from './components/common/ErrorBoundary';
+import FAQ from './pages/Legal/FAQ';
+import Glossary from './pages/Legal/Glossary';
+import ContactPage from './pages/Legal/ContactPage';
 
 import About from './pages/Legal/About';
 
@@ -46,6 +49,9 @@ const App = () => {
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:id" element={<BlogArticle />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/glossary" element={<Glossary />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </ErrorBoundary>
       </AppLayout>

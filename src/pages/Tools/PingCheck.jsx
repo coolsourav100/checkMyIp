@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
+import AdUnit from '../../components/ads/AdUnit';
 
 const PingCheck = () => {
   const [host, setHost] = useState('');
@@ -231,11 +232,8 @@ const PingCheck = () => {
         </div>
 
         <aside className="lg:col-span-4 space-y-8">
-          <div className="w-full h-full min-h-[600px] bg-surface-container-low flex flex-col items-center justify-center rounded-xl relative overflow-hidden border border-outline-variant/10">
-            <span className="font-label text-[10px] uppercase tracking-widest text-outline absolute top-4 left-6 z-10">Advertisement</span>
-            <div className="w-[300px] h-[600px] bg-white text-outline-variant font-medium text-center italic border flex items-center justify-center z-10">
-              300x600 Vertical Ad
-            </div>
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
         </aside>
       </div>

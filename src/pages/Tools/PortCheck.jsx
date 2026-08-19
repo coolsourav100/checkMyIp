@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
+import AdUnit from '../../components/ads/AdUnit';
 
 const PortCheck = () => {
   const [host, setHost] = useState('');
@@ -175,11 +176,65 @@ const PortCheck = () => {
               </div>
             </div>
           </article>
+
+          {/* Common Ports Guide */}
+          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 space-y-6">
+            <h2 className="font-headline text-2xl font-bold text-primary">Common Network Ports Explained</h2>
+            <div className="space-y-4 text-on-surface-variant leading-relaxed">
+              <p>Network ports are virtual endpoints that allow different services to operate simultaneously on a single server. Each port number (0–65535) identifies a specific process or network service. Understanding common ports is essential for network security, server administration, and troubleshooting connectivity issues.</p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+                  <div className="font-headline font-bold text-on-surface flex items-center gap-2 mb-1">
+                    <span className="text-primary font-mono text-sm">:80</span> HTTP
+                  </div>
+                  <p className="text-xs">Standard unencrypted web traffic. Browsers use this port by default when no protocol is specified. Should redirect to HTTPS (443) for security.</p>
+                </div>
+                <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+                  <div className="font-headline font-bold text-on-surface flex items-center gap-2 mb-1">
+                    <span className="text-primary font-mono text-sm">:443</span> HTTPS
+                  </div>
+                  <p className="text-xs">Encrypted web traffic using TLS/SSL. This is the standard for secure websites, online banking, and any page handling sensitive data.</p>
+                </div>
+                <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+                  <div className="font-headline font-bold text-on-surface flex items-center gap-2 mb-1">
+                    <span className="text-primary font-mono text-sm">:22</span> SSH
+                  </div>
+                  <p className="text-xs">Secure Shell protocol for encrypted remote server administration and secure file transfers (SCP/SFTP). Essential for server management.</p>
+                </div>
+                <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+                  <div className="font-headline font-bold text-on-surface flex items-center gap-2 mb-1">
+                    <span className="text-primary font-mono text-sm">:21</span> FTP
+                  </div>
+                  <p className="text-xs">File Transfer Protocol for uploading and downloading files. Transmits credentials in plaintext — use SFTP (port 22) instead for security.</p>
+                </div>
+                <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+                  <div className="font-headline font-bold text-on-surface flex items-center gap-2 mb-1">
+                    <span className="text-primary font-mono text-sm">:3306</span> MySQL
+                  </div>
+                  <p className="text-xs">Default port for MySQL database servers. Should never be exposed to the public internet — always restrict access via firewall rules.</p>
+                </div>
+                <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+                  <div className="font-headline font-bold text-on-surface flex items-center gap-2 mb-1">
+                    <span className="text-primary font-mono text-sm">:53</span> DNS
+                  </div>
+                  <p className="text-xs">Domain Name System uses this port for both TCP and UDP queries. DNS resolvers listen on this port to translate domain names into IP addresses.</p>
+                </div>
+              </div>
+
+              <h3 className="font-headline text-lg font-semibold text-on-surface mt-6 mb-2">Port State Meanings</h3>
+              <ul className="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>Open:</strong> A service is actively listening and accepting connections on this port. This is expected for web servers (80/443) but may indicate a security risk for database ports (3306, 5432).</li>
+                <li><strong>Closed:</strong> The port is accessible but no service is listening. The server actively refused the connection, which typically means the service is not running.</li>
+                <li><strong>Filtered:</strong> A firewall or security device is blocking access to the port. The scanner cannot determine whether the port is open or closed because packets are being silently dropped.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
         <aside className="lg:col-span-4 space-y-8">
-          <div className="w-full h-full min-h-[600px] bg-surface-container-low flex flex-col items-center justify-center rounded-xl border border-outline-variant/10">
-            <span className="font-label text-[10px] uppercase text-outline">Advertisement</span>
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
         </aside>
       </div>

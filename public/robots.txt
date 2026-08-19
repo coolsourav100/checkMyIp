@@ -1,4 +1,132 @@
-# client/public/robots.txt
+# https://www.checkmyip.in - Robots.txt
+# Allow all bots to crawl every page for maximum visibility
+
+# Default: Allow everything for all bots
 User-agent: *
 Allow: /
-Disallow: /api/
+Allow: /ads.txt
+Allow: /sitemap.xml
+Allow: /tools
+Allow: /dns-lookup
+Allow: /vpn-check
+Allow: /speed-test
+Allow: /ping-check
+Allow: /port-check
+Allow: /whois-lookup
+Allow: /security-check
+Allow: /blog
+Allow: /blog/*
+Allow: /about
+Allow: /faq
+Allow: /glossary
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /history
+
+# Google Bots - Full Access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+# Google Ads Bot - Important for AdSense revenue
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Bing / Microsoft Bots
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# Yandex (Russian Search Engine)
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+# Baidu (Chinese Search Engine)
+User-agent: Baiduspider
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Social Media Crawlers (for link previews & sharing)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# SEO & Analytics Tools
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: rogerbot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Archive.org
+User-agent: ia_archiver
+Allow: /
+
+# Sitemaps - help bots discover all pages
+Sitemap: https://www.checkmyip.in/sitemap.xml
+
+# Host directive (helps some bots resolve the canonical domain)
+Host: https://www.checkmyip.in

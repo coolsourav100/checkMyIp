@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
+import AdUnit from '../../components/ads/AdUnit';
 
 const WhoisLookup = () => {
   const [domain, setDomain] = useState('');
@@ -176,11 +177,30 @@ const WhoisLookup = () => {
               )}
             </div>
           </div>
+
+          {/* Educational Content */}
+          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 md:p-12 space-y-6">
+            <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mb-4">What is WHOIS and RDAP?</h2>
+            <div className="space-y-4 text-on-surface-variant leading-relaxed">
+              <p>WHOIS is the original protocol used to look up who owns a domain name. Created in the 1980s, WHOIS queries return registration information including the registrar, creation date, expiration date, nameservers, and sometimes the registrant's contact details. However, with the implementation of GDPR and other privacy regulations, most registrars now redact personal contact information from public WHOIS records.</p>
+              
+              <h3 className="font-headline text-xl font-semibold text-on-surface mt-6 mb-2">RDAP: The Modern Replacement</h3>
+              <p>Registration Data Access Protocol (RDAP) is the successor to WHOIS, developed by the IETF (Internet Engineering Task Force). Unlike the plain-text WHOIS protocol, RDAP returns data in structured JSON format, supports internationalization, and implements standardized access controls. Our tool uses RDAP endpoints to retrieve the most accurate and up-to-date registration data available.</p>
+              
+              <h3 className="font-headline text-xl font-semibold text-on-surface mt-6 mb-2">Why Check Domain Registration?</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Verify Domain Ownership:</strong> Confirm who owns a domain before entering into business relationships or purchasing a domain.</li>
+                <li><strong>Check Expiration Dates:</strong> Monitor when domains are set to expire—useful for acquiring expired domains or ensuring your own domains don't lapse.</li>
+                <li><strong>Investigate Suspicious Sites:</strong> Newly registered domains are often associated with phishing campaigns. Checking the registration date can reveal red flags.</li>
+                <li><strong>Technical Administration:</strong> Identify the authoritative nameservers and registrar lock status for DNS troubleshooting.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
         <aside className="lg:col-span-4 space-y-8">
-          <div className="w-full h-full min-h-[600px] bg-surface-container-low flex flex-col items-center justify-center rounded-xl relative overflow-hidden border border-outline-variant/10">
-            <span className="font-label text-[10px] uppercase tracking-widest text-outline absolute top-4 left-6 z-10">Advertisement</span>
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
         </aside>
       </div>

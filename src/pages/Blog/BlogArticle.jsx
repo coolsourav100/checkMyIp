@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { Helmet } from 'react-helmet-async';
+import AdUnit from '../../components/ads/AdUnit';
 
 const BlogArticle = () => {
   const { id } = useParams();
@@ -105,11 +106,8 @@ const BlogArticle = () => {
         <aside className="lg:col-span-4 flex flex-col gap-8">
           <div className="sticky top-24 flex flex-col gap-8">
             {/* Sidebar Ad */}
-            <div className="bg-surface-container-low rounded-xl p-4 flex flex-col items-center border border-outline-variant/10 min-h-[600px]">
-              <span className="text-[10px] font-label text-outline uppercase tracking-[0.2em] mb-4">Advertisement</span>
-              <div className="w-[300px] h-[600px] bg-white rounded-lg flex items-center justify-center text-outline-variant text-center px-4 italic text-sm border">
-                Premium Vertical Ad Unit<br/>(300 x 600)
-              </div>
+            <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+              <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
             </div>
 
             {/* Newsletter Card */}

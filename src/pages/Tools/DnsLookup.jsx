@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
+import AdUnit from '../../components/ads/AdUnit';
 
 const DnsLookup = () => {
   const [domain, setDomain] = useState('');
@@ -84,11 +85,10 @@ const DnsLookup = () => {
         <link rel="canonical" href="https://www.checkmyip.in/dns-lookup" />
       </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
-      {/* Ad Placeholder Leaderboard - MAXIMIZED */}
+      {/* Leaderboard Ad */}
       <div className="w-full flex justify-center mb-12">
-        <div className="w-full max-w-[970px] min-h-[100px] sm:min-h-[250px] bg-surface-container flex items-center justify-center rounded-xl overflow-hidden relative group border border-outline-variant/10">
-          <div className="text-outline text-xs font-label tracking-widest uppercase opacity-80 absolute top-4 left-6">Advertisement - Premium Partner</div>
-          <div className="text-outline-variant font-medium text-lg">970x250 Premium Billboard Layout</div>
+        <div className="w-full max-w-[970px] min-h-[100px] sm:min-h-[250px] rounded-xl overflow-hidden relative">
+          <AdUnit slot="auto" format="auto" className="w-full h-full" />
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -162,51 +162,106 @@ const DnsLookup = () => {
               )}
             </div>
           </div>
+
           {/* How It Works Section */}
           <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
-            <div className="max-w-2xl">
+            <div className="max-w-none">
               <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mb-6">How DNS Lookup Works</h2>
               <div className="prose prose-slate max-w-none space-y-6 text-on-surface-variant leading-relaxed">
                 <p>
-                  Domain Name System (DNS) is essentially the phonebook of the internet. When you type a URL like <code className="bg-surface-container px-2 py-1 rounded font-headline text-primary">checkmyip.com</code> into your browser, DNS translates that human-readable name into a machine-readable IP address.
+                  Domain Name System (DNS) is essentially the phonebook of the internet. When you type a URL like <code className="bg-surface-container px-2 py-1 rounded font-headline text-primary">checkmyip.in</code> into your browser, DNS translates that human-readable name into a machine-readable IP address. This process happens in milliseconds and is fundamental to nearly every internet interaction.
                 </p>
+
+                <h3 className="font-headline text-xl font-semibold text-on-surface mt-8 mb-4">The DNS Resolution Process</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
                   <div className="space-y-3">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-headline">1</div>
-                    <h3 className="font-bold text-on-surface">Query Initiation</h3>
-                    <p className="text-sm">Your computer asks a recursive DNS resolver for the IP address associated with the domain name.</p>
+                    <h4 className="font-bold text-on-surface">Query Initiation</h4>
+                    <p className="text-sm">When you enter a domain name, your computer first checks its local DNS cache. If no cached record exists, the request is forwarded to your ISP's recursive DNS resolver—or a public resolver like Google DNS (8.8.8.8) or Cloudflare DNS (1.1.1.1).</p>
                   </div>
                   <div className="space-y-3">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-headline">2</div>
-                    <h3 className="font-bold text-on-surface">Root Servers</h3>
-                    <p className="text-sm">The resolver queries root servers, which point it to the Top-Level Domain (TLD) server (e.g., .com, .net).</p>
+                    <h4 className="font-bold text-on-surface">Root Servers</h4>
+                    <p className="text-sm">The resolver queries one of 13 globally distributed root server clusters, which don't know the final IP address but can direct the resolver to the appropriate Top-Level Domain (TLD) server (e.g., .com, .net, .org, .in).</p>
                   </div>
                   <div className="space-y-3">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-headline">3</div>
-                    <h3 className="font-bold text-on-surface">Authoritative DNS</h3>
-                    <p className="text-sm">Finally, the TLD server points to the authoritative nameserver that holds the specific record.</p>
+                    <h4 className="font-bold text-on-surface">Authoritative DNS</h4>
+                    <p className="text-sm">The TLD server responds with the authoritative nameserver for the specific domain. This nameserver holds the actual DNS zone file containing all the record types (A, AAAA, MX, CNAME, TXT, NS) for that domain.</p>
                   </div>
                   <div className="space-y-3">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-headline">4</div>
-                    <h3 className="font-bold text-on-surface">Resolution</h3>
-                    <p className="text-sm">The resolver returns the IP address to your browser, allowing it to connect to the web server.</p>
+                    <h4 className="font-bold text-on-surface">Resolution & Caching</h4>
+                    <p className="text-sm">The resolver returns the IP address to your browser and caches the result based on the record's TTL (Time To Live) value. Subsequent requests for the same domain are answered instantly from cache.</p>
                   </div>
                 </div>
               </div>
             </div>
           </article>
+
+          {/* DNS Record Types Guide */}
+          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
+            <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mb-6">Understanding DNS Record Types</h2>
+            <div className="space-y-8 text-on-surface-variant leading-relaxed">
+              <section>
+                <h3 className="font-headline text-xl font-semibold mb-3 text-on-surface flex items-center gap-2">
+                  <span className="bg-secondary-fixed text-on-secondary-fixed px-2.5 py-0.5 rounded text-xs font-bold">A</span>
+                  Address Record
+                </h3>
+                <p>The A record is the most fundamental DNS record type. It maps a domain name directly to an IPv4 address (e.g., <code className="bg-surface-container px-1.5 py-0.5 rounded text-sm">93.184.216.34</code>). When someone types your domain name into their browser, the A record tells the internet which server to connect to. Most websites have at least one A record, and many large sites use multiple A records for load balancing across several servers.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-xl font-semibold mb-3 text-on-surface flex items-center gap-2">
+                  <span className="bg-secondary-fixed text-on-secondary-fixed px-2.5 py-0.5 rounded text-xs font-bold">AAAA</span>
+                  IPv6 Address Record
+                </h3>
+                <p>The AAAA (quad-A) record serves the same purpose as the A record but for IPv6 addresses. As the internet transitions from the limited 32-bit IPv4 address space to the virtually unlimited 128-bit IPv6 space, AAAA records are becoming increasingly important. An AAAA record looks like <code className="bg-surface-container px-1.5 py-0.5 rounded text-sm">2606:2800:220:1:248:1893:25c8:1946</code>.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-xl font-semibold mb-3 text-on-surface flex items-center gap-2">
+                  <span className="bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-0.5 rounded text-xs font-bold">MX</span>
+                  Mail Exchange Record
+                </h3>
+                <p>MX records direct email traffic to the correct mail servers for a domain. They include a priority value (lower numbers indicate higher priority) that tells sending mail servers which server to try first. For example, a domain might have <code className="bg-surface-container px-1.5 py-0.5 rounded text-sm">10 mail1.example.com</code> as the primary mail server and <code className="bg-surface-container px-1.5 py-0.5 rounded text-sm">20 mail2.example.com</code> as a backup. This redundancy ensures email delivery even if the primary server goes offline.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-xl font-semibold mb-3 text-on-surface flex items-center gap-2">
+                  <span className="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded text-xs font-bold">CNAME</span>
+                  Canonical Name Record
+                </h3>
+                <p>A CNAME record creates an alias from one domain name to another. For instance, <code className="bg-surface-container px-1.5 py-0.5 rounded text-sm">www.example.com</code> might have a CNAME pointing to <code className="bg-surface-container px-1.5 py-0.5 rounded text-sm">example.com</code>. This means both addresses resolve to the same server. CNAMEs are commonly used for subdomains, CDN configurations, and SaaS integrations where you need to point your domain at a third-party service.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-xl font-semibold mb-3 text-on-surface flex items-center gap-2">
+                  <span className="bg-surface-dim text-on-surface px-2.5 py-0.5 rounded text-xs font-bold">TXT</span>
+                  Text Record
+                </h3>
+                <p>TXT records store arbitrary text data in the DNS zone. While originally designed for human-readable notes, they now serve critical security functions. The most common uses include <strong>SPF records</strong> (Sender Policy Framework) which authorize mail servers to send email on behalf of your domain, <strong>DKIM records</strong> (DomainKeys Identified Mail) for email authentication, and <strong>domain verification</strong> for services like Google Workspace, Microsoft 365, and various analytics platforms.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-xl font-semibold mb-3 text-on-surface flex items-center gap-2">
+                  <span className="bg-outline text-white px-2.5 py-0.5 rounded text-xs font-bold">NS</span>
+                  Nameserver Record
+                </h3>
+                <p>NS records identify which DNS servers are authoritative for a particular domain. When you register a domain and point it to a hosting provider, you're updating the NS records. These records are critical to the delegation chain—they tell the global DNS infrastructure where to find the definitive DNS zone data for your domain. A typical domain has at least two NS records for redundancy.</p>
+              </section>
+            </div>
+          </article>
         </div>
+
         {/* Sidebar */}
         <aside className="lg:col-span-4 space-y-8">
-          {/* Ad Placeholder Sidebar */}
-          <div className="w-full h-full min-h-[600px] bg-surface-container-low flex flex-col items-center justify-center rounded-xl relative overflow-hidden border border-outline-variant/10">
-            <span className="font-label text-[10px] uppercase tracking-widest text-outline absolute top-4 left-6 z-10">Advertisement</span>
-            <div className="w-[300px] h-[600px] bg-white text-outline-variant font-medium text-center italic border flex items-center justify-center z-10">
-              300x600 Vertical Fill Ad
-            </div>
+          {/* Sidebar Ad */}
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
           {/* Related Tools Card */}
-          <div className="surface-container-lowest p-6 rounded-xl space-y-4">
+          <div className="bg-surface-container-lowest p-6 rounded-xl space-y-4">
             <h3 className="font-headline font-bold text-lg text-primary">Network Utilities</h3>
             <ul className="space-y-3">
               <li>
@@ -219,7 +274,7 @@ const DnsLookup = () => {
                 </Link>
               </li>
               <li>
-                <Link to="#" className="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-all group">
+                <Link to="/whois-lookup" className="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-all group">
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">security</span>
                     <span className="text-sm font-medium">Whois Lookup</span>

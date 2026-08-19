@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
+import AdUnit from '../../components/ads/AdUnit';
 
 const NetworkSecurity = () => {
   const [domain, setDomain] = useState('');
@@ -177,11 +178,34 @@ const NetworkSecurity = () => {
               </div>
             </div>
           </article>
+
+          {/* Educational Content - Security Headers Guide */}
+          <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 space-y-6">
+            <h2 className="font-headline text-2xl font-bold text-primary">Understanding HTTP Security Headers</h2>
+            <div className="space-y-4 text-on-surface-variant leading-relaxed text-sm">
+              <p>HTTP security headers are directives sent by a web server in its response that instruct the browser to enforce specific security policies. These headers are a critical layer of defense against common web attacks including cross-site scripting (XSS), clickjacking, and man-in-the-middle (MITM) attacks.</p>
+              
+              <section>
+                <h3 className="font-headline text-lg font-semibold text-on-surface mb-2">HSTS (HTTP Strict Transport Security)</h3>
+                <p>HSTS tells browsers to only communicate with the server over HTTPS, even if the user types <code className="bg-surface-container px-1.5 py-0.5 rounded text-xs">http://</code> in the address bar. This prevents SSL stripping attacks where an attacker downgrades a connection from HTTPS to HTTP to intercept data. A properly configured HSTS header includes <code className="bg-surface-container px-1.5 py-0.5 rounded text-xs">max-age=31536000</code> (one year) and the <code className="bg-surface-container px-1.5 py-0.5 rounded text-xs">includeSubDomains</code> directive.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-lg font-semibold text-on-surface mb-2">Content Security Policy (CSP)</h3>
+                <p>CSP is one of the most powerful security headers available. It defines which sources of content (scripts, styles, images, fonts) the browser is allowed to load and execute. A strong CSP can effectively neutralize XSS attacks by preventing the execution of inline scripts and unauthorized external resources.</p>
+              </section>
+
+              <section>
+                <h3 className="font-headline text-lg font-semibold text-on-surface mb-2">TLS (Transport Layer Security)</h3>
+                <p>TLS is the cryptographic protocol that secures data in transit between your browser and a web server. TLS 1.3, the latest version, offers improved security and performance over TLS 1.2 by reducing the handshake to a single round trip and removing support for weak cipher suites. Any site still using TLS 1.0 or 1.1 is considered insecure.</p>
+              </section>
+            </div>
+          </article>
         </div>
 
         <aside className="lg:col-span-4 space-y-8">
-          <div className="w-full h-full min-h-[600px] bg-surface-container-low flex flex-col items-center justify-center rounded-xl relative overflow-hidden border border-outline-variant/10">
-            <span className="font-label text-[10px] uppercase tracking-widest text-outline absolute top-4 left-6 z-10">Advertisement</span>
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
         </aside>
       </div>

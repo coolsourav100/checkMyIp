@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import AdUnit from '../../components/ads/AdUnit';
 
 const BlogIndex = () => {
   const [posts, setPosts] = useState([]);
@@ -124,12 +125,9 @@ const BlogIndex = () => {
             </div>
           </div>
           
-          {/* AdSense Placeholder */}
-          <div className="bg-surface-container-low rounded-xl flex flex-col items-center justify-center py-12 px-6 border border-outline-variant border-opacity-15 min-h-[600px]">
-            <span className="text-[10px] font-label text-outline uppercase tracking-widest mb-4">Advertisement</span>
-            <div className="w-[300px] h-[600px] bg-white rounded shadow-sm flex items-center justify-center text-outline-variant font-headline italic">
-              AdSense 300x600
-            </div>
+          {/* Sidebar Ad */}
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
         </aside>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
 import { saveToHistory } from '../../utils/history';
+import AdUnit from '../../components/ads/AdUnit';
 
 const VpnProxyCheck = () => {
   const [ip, setIp] = useState('');
@@ -41,11 +42,10 @@ const VpnProxyCheck = () => {
         <link rel="canonical" href="https://www.checkmyip.in/vpn-check" />
       </Helmet>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
-      {/* Ad Placeholder Banner - MAXIMIZED */}
+      {/* Leaderboard Ad */}
       <div className="w-full flex justify-center mb-12">
-        <div className="w-full max-w-[970px] min-h-[100px] sm:min-h-[250px] bg-surface-container flex items-center justify-center rounded-xl overflow-hidden relative group border border-outline-variant/10">
-          <div className="text-outline text-xs font-label tracking-widest uppercase opacity-80 absolute top-4 left-6">Advertisement - Premium Partner</div>
-          <div className="text-outline-variant font-medium text-lg">970x250 Premium Billboard Layout</div>
+        <div className="w-full max-w-[970px] min-h-[100px] sm:min-h-[250px] rounded-xl overflow-hidden relative">
+          <AdUnit slot="auto" format="auto" className="w-full h-full" />
         </div>
       </div>
 
@@ -126,7 +126,7 @@ const VpnProxyCheck = () => {
 
           {/* Educational Content */}
           <article className="bg-surface-container-low rounded-xl p-5 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
-            <div className="max-w-2xl">
+            <div className="max-w-none">
               <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mb-6">How VPN Detection Works</h2>
               <div className="prose prose-slate max-w-none space-y-6 text-on-surface-variant leading-relaxed">
                 <p>
@@ -135,6 +135,46 @@ const VpnProxyCheck = () => {
                 <p>
                   An IP address allocated to a known residential internet service provider (like Comcast or AT&T) is designated as a standard user. However, if the IP block is owned by hosting providers like DigitalOcean, Amazon Web Services, or specialized proxy farms, our detection algorithm flags the connection as non-human or anonymized.
                 </p>
+
+                <h3 className="font-headline text-xl font-semibold text-on-surface mt-8 mb-3">Types of IP Classifications</h3>
+                <div className="space-y-4">
+                  <div className="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                    <h4 className="font-headline font-bold text-on-surface mb-2 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary text-lg">home</span>
+                      Residential IPs
+                    </h4>
+                    <p className="text-sm">Assigned by traditional ISPs to home and mobile users. These are considered "clean" and are typically not flagged by fraud detection systems. Most everyday internet users browse through residential IPs.</p>
+                  </div>
+                  <div className="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                    <h4 className="font-headline font-bold text-on-surface mb-2 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary text-lg">cloud</span>
+                      Datacenter IPs
+                    </h4>
+                    <p className="text-sm">Belong to cloud hosting providers like AWS, Google Cloud, Azure, DigitalOcean, or Hetzner. While not inherently malicious, datacenter IPs are commonly used by VPN services, bots, and automated scrapers because servers can be provisioned cheaply and at scale.</p>
+                  </div>
+                  <div className="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                    <h4 className="font-headline font-bold text-on-surface mb-2 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary text-lg">vpn_lock</span>
+                      Known VPN Exit Nodes
+                    </h4>
+                    <p className="text-sm">Major VPN providers (NordVPN, ExpressVPN, Surfshark, etc.) operate thousands of exit nodes worldwide. Security researchers continuously catalog these IP ranges, allowing detection systems to identify VPN traffic with high confidence.</p>
+                  </div>
+                  <div className="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                    <h4 className="font-headline font-bold text-on-surface mb-2 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary text-lg">public_off</span>
+                      Tor Exit Nodes
+                    </h4>
+                    <p className="text-sm">The Tor network publishes its exit node list publicly. Any traffic originating from these IPs is routed through multiple encrypted relays, making it the strongest form of anonymization available. However, many websites block Tor exit nodes entirely.</p>
+                  </div>
+                </div>
+
+                <h3 className="font-headline text-xl font-semibold text-on-surface mt-8 mb-3">Why VPN Detection Matters</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Fraud Prevention:</strong> E-commerce platforms use VPN detection to flag suspicious transactions where the billing address and IP geolocation don't match.</li>
+                  <li><strong>Content Licensing:</strong> Streaming services enforce regional licensing agreements by detecting VPN usage that circumvents geo-restrictions.</li>
+                  <li><strong>Security Auditing:</strong> If you use a VPN for privacy, our tool helps verify that your VPN is actually working and your real IP isn't leaking.</li>
+                  <li><strong>Bot Mitigation:</strong> Websites detect datacenter IPs to filter automated traffic from scraping bots and credential-stuffing attacks.</li>
+                </ul>
               </div>
             </div>
           </article>
@@ -142,12 +182,9 @@ const VpnProxyCheck = () => {
 
         {/* Sidebar */}
         <aside className="lg:col-span-4 space-y-8">
-          {/* Ad Placeholder Sidebar MAXIMIZED */}
-          <div className="w-full h-full min-h-[600px] bg-surface-container-low rounded-xl flex flex-col items-center justify-center relative overflow-hidden group border border-outline-variant/10">
-            <div className="text-outline text-xs font-label tracking-widest uppercase opacity-80 mb-4 z-10">Advertisement</div>
-            <div className="w-[300px] h-[600px] bg-white text-outline-variant flex items-center justify-center border font-headline italic">
-              300x600 Vertical Fill Ad
-            </div>
+          {/* Sidebar Ad */}
+          <div className="w-full min-h-[600px] rounded-xl overflow-hidden">
+            <AdUnit slot="auto" format="vertical" className="w-full h-[600px]" />
           </div>
         </aside>
       </div>
